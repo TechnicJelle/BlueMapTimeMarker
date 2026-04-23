@@ -11,6 +11,7 @@ public class Config {
 	public final String markerSetName;
 	public final boolean toggleable;
 	public final boolean defaultHidden;
+	public final boolean inWorld;
 	public final double x;
 	public final double y;
 	public final double z;
@@ -30,6 +31,7 @@ public class Config {
 		markerSetName = plugin.getConfig().getString("MarkerSetName", "Time Marker");
 		toggleable = plugin.getConfig().getBoolean("Toggleable", true);
 		defaultHidden = plugin.getConfig().getBoolean("DefaultHidden", false);
+		inWorld = plugin.getConfig().getBoolean("InWorld", false);
 		x = plugin.getConfig().getDouble("x", 0.5);
 		y = plugin.getConfig().getDouble("y", 64);
 		z = plugin.getConfig().getDouble("z", 0.5);

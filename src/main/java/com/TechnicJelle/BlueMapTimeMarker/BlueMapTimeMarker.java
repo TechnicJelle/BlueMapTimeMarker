@@ -1,5 +1,6 @@
 package com.TechnicJelle.BlueMapTimeMarker;
 
+import com.technicjelle.BMUtils.BMCopy;
 import com.technicjelle.UpdateChecker;
 import de.bluecolored.bluemap.api.BlueMapAPI;
 import de.bluecolored.bluemap.api.BlueMapMap;
@@ -11,7 +12,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -36,6 +39,14 @@ public final class BlueMapTimeMarker extends JavaPlugin {
 	final Consumer<BlueMapAPI> onEnableListener = api -> {
 		config = new Config(this);
 		updateChecker.logUpdateMessage(getLogger());
+
+		try {
+			if (!config.inWorld) {
+				BMCopy.jarResourceToWebApp(api, this.getClassLoader(), "style.css", "bmtm.css");
+			}
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 
 		worldMarkerSets = new HashMap<>();
 		for (World bukkitWorld : Bukkit.getWorlds()) {
@@ -76,7 +87,10 @@ public final class BlueMapTimeMarker extends JavaPlugin {
 					.label(config.markerSetName)
 					.position(config.x, config.y, config.z)
 					.html(html)
+					.styleClasses(Config.MARKER_SET_ID)
 					.build();
+
+			if (!config.inWorld) marker.addStyleClasses(List.of("in-ui")); //TODO: Replace the `List.of()` once BlueMapAPI has updated.
 
 			markerSet.put(Config.MARKER_SET_ID, marker);
 		});

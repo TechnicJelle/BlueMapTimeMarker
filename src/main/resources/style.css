@@ -1,0 +1,6 @@
+div:has(> .time-marker.in-ui) {
+	display: block !important;
+	opacity: 1 !important;
+	left: 50%;
+	transform: translate(0, 50%) !important;
+}

@@ -4,6 +4,9 @@ MarkerSetName: "Time Marker"
 Toggleable: true
 DefaultHidden: false
 
+# Whether the marker is in the world or in the UI
+InWorld: true
+
 x: 0.5
 y: 64.0
 z: 0.5
