@@ -1,0 +1,7 @@
+name: '${project.name}'
+version: '${project.version}'
+main: com.TechnicJelle.BlueMapTimeMarker.BlueMapTimeMarker
+api-version: 1.13
+author: TechnicJelle
+description: '${project.description}'
+website: '${project.url}'
