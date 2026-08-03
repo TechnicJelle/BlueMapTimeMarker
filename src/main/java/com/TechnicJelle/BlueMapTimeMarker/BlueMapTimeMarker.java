@@ -14,7 +14,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -90,7 +89,7 @@ public final class BlueMapTimeMarker extends JavaPlugin {
 					.styleClasses(Config.MARKER_SET_ID)
 					.build();
 
-			if (!config.inWorld) marker.addStyleClasses(List.of("in-ui")); //TODO: Replace the `List.of()` once BlueMapAPI has updated.
+			if (!config.inWorld) marker.addStyleClasses("in-ui");
 
 			markerSet.put(Config.MARKER_SET_ID, marker);
 		});
