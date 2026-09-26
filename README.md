@@ -3,7 +3,7 @@
 [![GitHub Total Downloads](https://img.shields.io/github/downloads/TechnicJelle/BlueMapTimeMarker/total?label=Downloads&color=success "Click here to download the plugin")](https://github.com/TechnicJelle/BlueMapTimeMarker/releases/latest)
 [![Servers using this plugin](https://img.shields.io/bstats/servers/30913?label=Servers)](https://bstats.org/plugin/bukkit/BlueMap%20Time%20Marker/30913)
 
-Adds a marker showing the time to [BlueMap](https://github.com/BlueMap-Minecraft/BlueMap).
+Adds a marker showing the in-game time to [BlueMap](https://github.com/BlueMap-Minecraft/BlueMap).
 
 ![demo image](.github/readme_assets/demo.png)
 
